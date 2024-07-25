@@ -4,6 +4,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #d2d0d0;
+    overflow-x: hidden; 
 }
 
 /* Header styles */
@@ -16,7 +17,8 @@ header.page-header {
     width: 100%;
     background-color: #09bd93; 
     z-index: 1000; 
-    box-shadow: 0 20px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
 }
 .page-header {
     display: flex;
@@ -108,6 +110,7 @@ header.page-header {
 }
 
 .sliding-images {
+    padding-top: 1.22rem;
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
