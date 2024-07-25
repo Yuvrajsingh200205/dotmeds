@@ -5,7 +5,7 @@ const authRouter = require('./routes/auth');
 
 const app = express();
 app.set('view engine', 'ejs');
-app.set("views",path.resolve("./views"));
+// app.set("views",path.resolve("./views"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,12 +14,12 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
- return res.render('med');
+  res.render('med');
 })
 
 // Define a route for rendering the login page
 app.get('/login', (req, res) => {
-  return res.render('login');
+  res.render('login');
 });
 
 app.use('/auth', authRouter);
