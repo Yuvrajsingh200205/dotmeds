@@ -1,0 +1,19 @@
+{
+  "name": "dotmeds",
+  "version": "1.0.0",
+  "description": "a website used to order medicines",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "dotmeds"
+  },
+  "author": "Aditya Pandey",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

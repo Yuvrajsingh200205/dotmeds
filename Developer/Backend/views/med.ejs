@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apki medical</title>
+    <link rel="stylesheet" href="med.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <Style>
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #d2d0d0;
+    overflow-x: hidden; 
+}
+
+/* Header styles */
+
+header.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #09bd93; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #09bd93;
+   
+}
+
+/* Logo styles */
+.page_logo  {
+    height: 40px;
+    width: auto;
+     color: #0e1a1c;
+    padding: 5px;
+    border-radius: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.page_logo i {
+    padding: 5px;
+ font-size: 40px;
+
+}
+
+/* Search bar styles */
+.page_search form {
+    display: flex;
+    align-items: center;
+}
+
+.page_search input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.page_search button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background-color: #007bff;
+    /* color: white; */
+    cursor: pointer;
+}
+
+.page_search button:hover {
+    background-color: #0056b3;
+}
+
+/* Header navigation links styles */
+.page-header div {
+    display: flex;
+    align-items: center;
+}
+
+.page-header div a {
+    text-decoration: none;
+    color: #090a0a;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.page-header div i {
+    margin-right: 5px;
+    color: #090a0a;
+}
+
+/* Specific sections styles */
+.Upload, .offer, .cart, .sign_in {
+    margin-left: 20px;
+}
+
+.Upload a, .offer a, .cart a, .sign_in a {
+    display: flex;
+    align-items: center;
+}
+
+/* sliding style adding the css */
+/* slidingl styles */
+.sliding {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sliding-images {
+    padding-top: 1.22rem;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sliding-images img {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.sliding-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sliding-btn.prev {
+    left: 0;
+}
+
+.sliding-btn.next {
+    right: 0;
+}
+
+
+
+
+/* Adds-box styles */
+.adds-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.adds-box .box-1, .adds-box .box-2 {
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+}
+
+.adds-box .box-1 img, .adds-box .box-2 img {
+    width: 20%; 
+    height: auto;
+    border-radius: 50px;
+    margin-right: 10px; /* Space between image and text */
+}
+
+.adds-box .box-1 .text-content, .adds-box .box-2 .text-content {
+    flex: 1;
+    text-align: left;
+      flex: 1; /* Align text to left */
+}
+
+.adds-box h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+
+.adds-box h4 {
+    margin:  0;
+    font-size: 16px;
+    color: #09bd93;
+}
+
+
+/* second box  */
+.payment-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.payment-box .box-1, .payment-box .box-2 {
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+}
+
+.payment-box .box-1 img, .payment-box .box-2 img {
+    width: 20%; 
+    height: auto;
+    border-radius: 50px;
+    margin-right: 10px; /* Space between image and text */
+}
+
+.payment-box .box-1 .text-content, .payment-box .box-2 .text-content {
+    flex: 1;
+    text-align: left;
+      flex: 1; /* Align text to left */
+}
+
+.payment-box h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+
+.payment-box h4 {
+    margin:  0;
+    font-size: 16px;
+    color: #09bd93;
+}
+
+
+/* Membership styles */
+.membership {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #eddbdb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(39, 22, 22, 0.1);
+    margin: 13px;
+    width: 96%; 
+}
+
+.membership img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.membership h2 {
+    margin: 0 8px 0 0;
+    font-size: 24px;
+}
+
+.membership h5 {
+    margin: 0 15px;
+    font-size: 18px;
+    color: #09bd93;
+}
+
+.membership i {
+    margin: 25px ;
+    font-size: 15px;
+    color: #e53926; 
+}
+
+.membership button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #DAA520; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership button:hover {
+    background-color: #b8860b; 
+}
+
+
+/* Sliding carousel styles */
+.sliding2 {
+    position: relative;
+    width: 100%;
+    margin: 50px auto;
+    overflow: hidden;
+    /* border: 2px solid #ccc; */
+    border-radius: 10px;
+}
+
+.sliding2-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.sliding2-images img {
+    min-width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    /* border: 1px solid #ddd; */
+    border-radius: 30px;
+    margin-right: 30px;
+}
+
+.sliding2-btn {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index:1;
+}
+.sliding-btn.prev {
+    left: 10px;
+}
+
+.sliding-btn.next {
+    right: 10px;
+}
+
+
+.bestseller {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.bestseller .product,
+.bestseller .product2,
+.bestseller .product3,
+.bestseller .product4,
+.bestseller .product5,
+.bestseller .product6,
+.bestseller .product7,
+.bestseller .product8 {
+    background-color: #f8d7da;  
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 20%;  
+    margin-bottom: 20px;  
+}
+
+.bestseller img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.bestseller h2 {
+    font-size: 18px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.bestseller h3 {
+    font-size: 16px;
+    color: #d9534f; 
+    margin: 10px 0;
+}
+
+.bestseller button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #d9534f;  
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bestseller button:hover {
+    background-color: #c9302c; 
+}
+
+/* new arrivall css */
+
+.newArrival{
+height: 150px;
+background-color: pink;
+}
+.newArrival2{
+    height: 150px;
+    background-color: rgb(134, 170, 204);
+    }
+    .downpart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        padding: 0px;
+        border-radius: 53px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 96%;
+        position: relative;
+        top: 263px;
+    }
+    
+    .downpart img:first-of-type {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: -270px;
+        border-radius: 10px;
+    }
+    
+    .downpart h2 {
+        margin: 20px 0;
+        font-size: 28px; 
+        color: #333; 
+        text-align: center;
+    }
+    
+    .downpart h3 {
+        margin: 20px 0;
+        font-size: 26px;
+        color: #555;
+        text-align: center;
+    }
+    
+    .downpart img[alt="Google Play"],
+    .downpart img[alt="App Store"] {
+        width: 150px; 
+        height: auto;
+        margin: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;  
+    }
+    
+    .downpart img[alt="Google Play"]:hover,
+    .downpart img[alt="App Store"]:hover {
+        transform: scale(1.1); 
+    }
+    
+
+
+
+    #footer {
+        background: #09bd93;
+        padding: 30px 0;
+        color: #1f1616;
+        position: relative;
+        top: 350px;
+    }
+    
+    #footer h5 {
+        color: #161212;
+        margin-bottom: 20px;
+        font-size: 31px;
+        font-weight: 600;
+        width: 195px;
+    }
+    
+    #footer .quick-links {
+        list-style: none;
+        padding: 11px;
+        width: 112px;
+    }
+    
+    #footer .quick-links li {
+        margin-bottom: 10px;
+    }
+    
+    #footer .quick-links li a {
+        color: #241c1c;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    #footer .quick-links li a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+    
+    #footer .social {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    #footer .social li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+    
+    #footer .social li a {
+        color: #fff;
+        font-size: 20px;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background: #555;
+        text-align: center;
+        transition: all 0.3s;
+    }
+    
+    #footer .social li a:hover {
+        background: #777;
+    }
+    
+    #footer .text-white {
+        color: #fff;
+        margin: 20px 0 0;
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    #footer .text-white a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    #footer .text-white a:hover {
+        color: #ddd;
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 767px) {
+        #footer .text-xs-center {
+            text-align: center;
+        }
+    
+        #footer .text-sm-left,
+        #footer .text-md-left {
+            text-align: center;
+        }
+    }   
+    #footer .page_logo {
+        position: relative;
+        left: 1100px;
+        bottom: 217px;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        font-size: 35px;
+    }
+#footer .page_logo i{
+    font-size: 90px;
+}
+
+    </Style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="page_logo"><i class="fa-solid fa-truck-medical"></i>
+        <h2>DotMeds</h2>
+        </div>
+        <div class="page_search"> <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Search for medical">
+            <button type="submit">Search</button>
+        </form></div> 
+        <div class="Upload"><i class="fa-solid fa-file-arrow-up"></i>
+        <a href="Upload">Upload</a>
+        </div>
+        <div class="offer"><i class="fa-solid fa-tag"></i>
+            <a href="Offers">Offers</a>
+        </div>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
+            <a href="Cart">Cart</a>
+        </div>
+        <div class="sign_in"><i class="fa-solid fa-user-plus"></i>
+            <a href="Sign in/Sign up">Sign in/Sign up</a>
+        </div>
+    </header>
+    <p>
+  <a href="Covid Essentials">Covid Essentials</a> <a href=" Diabetes "> Diabetes</a> <a href="Cardiac Care">Cardiac Care</a>  <a href="stomach Care">Stomach Care</a> <a href=" Ayurvedic"> Ayurvedic</a>  <a href="Homeopathy">Homeopathy</a>  <a href="Fitness">Fitness</a> <a href="Mom & Baby Devices">Mom & Baby Devices</a> <a href="Surgicals ">Surgicals </a> <a href="Sexual">Sexual</a>  <a href="Wellness">Wellness</a> <a href="Treatments Skin Care Personal Care">Treatments Skin Care Personal Care</a>
+  </p>
+
+<div class="sliding">
+    <button class="sliding-btn prev">&#10094;</button>
+    <div class="sliding-images">
+        <img src="https://mercury.akamaized.net/i/b21032de0de0ece8e5f53dacc044c770_200939_0.jpg" alt="add_image_1">
+        <img src="https://mercury.akamaized.net/i/e79da7dbff64419b203841851de70768_201575_0.jpg" alt="add_image_2">
+        <img src="https://mercury.akamaized.net/i/385934785de15e946c25cc09b4c2ff93_278458_0.jpg" alt="add_image_3">
+        <img src="https://mercury.akamaized.net/i/2c3c5243156be686e40f695387642a5f_100354_0.png" alt="add_image_4">
+        <img src="https://mercury.akamaized.net/i/a923f985a42f5d331fc6ef69ed777365_247824_0.jpg" alt="add_image_5">
+    </div>
+    <button class="sliding-btn next">&#10095;</button>
+</div>
+
+<div class="adds-box">
+    <div class="box-1"><img src="https://cdn.vectorstock.com/i/2000v/19/79/health-care-medical-logo-design-pharmacy-vector-33851979.avif" alt="image1">
+        <h2>Order Medicine</h2>
+    <h4>Save Upto 25% off</h4>
+</div>
+
+<div class="box-2"><img src="https://cdn.vectorstock.com/i/1000x1000/06/98/abstract-boutique-logo-symbol-vector-27040698.webp" alt="image2">
+    <h2>Beauty</h2>
+<h4>Save Upto 40% off</h4>
+</div>
+
+<div class="box-2"><img src="https://cdn.vectorstock.com/i/2000v/11/62/abstract-lotus-flower-and-people-logo-design-vector-50691162.avif" alt="image2">
+    <h2>Wellness</h2>
+<h4> Upto 60% off</h4>
+</div>
+</div>
+
+<h1>Payment Partner Offers </h1>
+
+<div class="payment-box">
+    <div class="box-1"><img src="https://cdn.vectorstock.com/i/2000v/94/04/lock-creative-symbol-concept-cyber-security-vector-23569404.avif" alt="image1">
+        <h3>Get up to Rs. 300 Paytm Cashback....</h3>
+    <h5></h5>
+</div>
+
+<div class="box-2"><img src="https://cdn.vectorstock.com/i/1000x1000/36/92/cyber-security-design-with-keyhole-in-shield-logo-vector-50073692.webp" alt="image2">
+    <h3>Get assured Savings of up to Rs. 200* + Earn up to 16X rewards*</h3>
+
+</div>
+
+<div class="box-2"><img src="https://cdn.vectorstock.com/i/2000v/48/12/cybersecurity-icon-on-white-vector-21344812.avif" alt="image2">
+    <h3>Get assured Savings of up to Rs. 150* + Earn up to 16X rewards*</h3>
+<!-- <h4> Upto 60% off</h4> -->
+</div>
+</div>
+
+<div class="membership">
+    <img src="https://e7.pngegg.com/pngimages/1003/165/png-clipart-club-penguin-island-the-walt-disney-company-video-game-star-membership-logo-game-ribbon.png" alt="image">
+<h2>Dotmeds First Membership</h2>
+<h5>Get special discounts and offer on Dotmeds services.</h5>
+<i class="fa-solid fa-bolt">starting at $149</i>
+<button>Explore plans</button>
+</div>
+
+<div class="sliding2">
+
+    <button class="sliding-btn prev">&#10094;</button>
+    <div class="sliding2-images">
+        <img src="https://mercury.akamaized.net/i/3a022bfab7db21bb50955e538f4e3373_277258_0.jpg" alt="add_image1">
+        <img src="https://mercury.akamaized.net/i/e9a1b9abc95bba3f91e9b9686fd95f1b_58400_0.jpg" alt="add_image2">
+        <img src="https://mercury.akamaized.net/i/f6f7d098a24ddc1272d13e60439b1d74_246501_0.jpg" alt="add_image3">
+        <img src="https://mercury.akamaized.net/i/8770e37a4ecacc039a081de7dbc399e0_58496_0.jpg" alt="add_image4">
+        <img src="https://mercury.akamaized.net/i/1722a32b849ec9fcd0de0d0aba8e0392_269111_0.jpg" alt="add_image5">
+        <img src="https://mercury.akamaized.net/i/a70c3fc7b40e437eb70b0ec1e97fe20e_68894_0.jpg" alt="add_image6">
+        <img src="https://mercury.akamaized.net/i/f0347160331070c37035d24dba7719c5_273250_0.jpg" alt="add_image7">
+        <img src="https://mercury.akamaized.net/i/12c877f45327b8bcdb06ee2eaee73ea5_260266_0.jpg" alt="add_image8">
+        <img src="https://mercury.akamaized.net/i/cc88dd1ae8492659ca3904c3e044538a_58409_0.jpg" alt="add_image9">
+        <img src="https://mercury.akamaized.net/i/9670f050d93c394710c1a0afb68b2d52_262175_0.jpg" alt="add_image10">
+        <img src="https://mercury.akamaized.net/i/12c877f45327b8bcdb06ee2eaee73ea5_260266_0.jpg" alt="add_image11">
+        <img src="https://mercury.akamaized.net/i/e955733e53fa3187bc79c39171cd7d3f_271448_0.jpg" alt="add_image12">
+        <img src="https://mercury.akamaized.net/i/dee8a6042bbfe466a629c728e9ecd168_58424_0.jpg" alt="add_image13">
+        <img src="https://mercury.akamaized.net/i/0875d21fcc4d445f9b45291a10a5adf6_232628_0.jpg" alt="add_image14">
+        <img src="https://mercury.akamaized.net/i/6b479fc00454f0f1b5eced3f1a49d081_252324_0.jpg" alt="add_image15">
+        <img src="https://mercury.akamaized.net/i/55342975b9aa8e6610d0525d4320029c_69580_0.jpg" alt="add_image16">
+        <img src="https://mercury.akamaized.net/i/fadb859e09c366fc0df1c87d578ed5b6_261682_0.jpg" alt="add_image17">
+        <img src="https://mercury.akamaized.net/i/3a022bfab7db21bb50955e538f4e3373_277258_0.jpg" alt="add_image18">
+        <img src="https://mercury.akamaized.net/i/e9a1b9abc95bba3f91e9b9686fd95f1b_58400_0.jpg" alt="add_image19">
+    </div>
+    <button class="sliding-btn next">&#10095;</button>
+</div>
+
+<div class="bestseller">
+    <div class="product">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/354458/accu_chek_active_test_strip_100_s_0.jpg" alt="">
+        <h2>Accu-Chek Instant</h2>
+        <h2>Rs 1223.21</h2>
+        <h3>GET 21% off</h3>
+        <button>ADD TO CART</button>
+</div>
+
+<div class="product2">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/804268/virginia_care_spento_himen_restore_virginity_pack_of_2_0_2.jpg" alt="">
+        <h2>Virginia Care Spento Hime.....</h2>
+        <h2>Rs 2983.21</h2>
+        <h3>GET 25% off</h3>
+        <button>ADD TO CART</button>
+</div>
+
+<div class="product3">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/412720/omnigel_geltopical_75gm_54223_0_3.jpg" alt="">
+        <h2>Omnigel.....</h2>
+        <h2>Rs 183.21</h2>
+        <h3>GET 45% off</h3>
+        <button>ADD TO CART</button>
+</div>
+
+<div class="product4">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/357753/d_protin_chocolate_powder_500_gm_0.jpg" alt="">
+        <h2>D protin Chocolate.....</h2>
+        <h2>Rs 590.51</h2>
+        <h3>GET 45% off</h3>
+        <button>ADD TO CART</button>
+</div>
+<div class="product5">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/813592/dr_morepen_gluco_one_blood_glucose_test_strips_bg03_50_s_58318_0_4.jpg" alt="">
+        <h2>Dr.Morepen GlucoOne.....</h2>
+        <h2>Rs 590.51</h2>
+        <h3>GET 45% off</h3>
+        <button>ADD TO CART</button>
+</div>
+<div class="product6">
+    <img src="https://www.netmeds.com/images/product-v1/600x600/822661/durex_condoms_extra_time_10s_0_4.jpg" alt="">
+        <h2>Durex Condoms.....</h2>
+        <h2>Rs 270.51</h2>
+        <h3>GET 3% off</h3>
+        <button>ADD TO CART</button>
+</div>
+<div class="product7">
+    <img src="https://www.netmeds.com/images/product-v1/150x150/388215/volini_spray_100gm_46243_0_2.jpg" alt="">
+        <h2>Volini Spray 100gm</h2>
+        <h2>Rs 400.51</h2>
+        <h3>GET 15% off</h3>
+        <button>ADD TO CART</button>
+</div>
+<div class="product8">
+    <img src="https://www.netmeds.com/images/product-v1/600x600/850948/kamasutra_condoms_dotted_20_s_0.jpg" alt="">
+        <h2> Kamasutra Condoms - Dotted 20's </h2>
+        <h2>Rs 150.51</h2>
+        <h3>GET 2% off</h3>
+        <button>ADD TO CART</button>
+</div>
+</div>
+
+<div class="newArrival">
+    <div class="kit">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/facial_kits.png" alt="img1">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/lip_care.png" alt="img1">
+        <img src="https://www.netmeds.com/images/category/v1/525/thumb/body_care_4.png" alt="">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/hair_care.png" alt="">
+        
+        </div>
+
+        <div class="newArrival2">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/skin_care.png" alt="">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/day_cream.png" alt="">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/razors_cartridges.png" alt="">
+        <img src="https://www.netmeds.com/images/category/prod/thumb/beard_wash.png" alt="">
+    </div>
+
+    <div class="downpart">
+        <img src="https://assets.pharmeasy.in/apothecary/images/downloadBanner.webp?dim=1440x0&q=100" alt="banner">
+        <h2>Simplifying Healthcare Impacting Lives</h2>
+        <h3>Download the App for Free</h3>
+        
+            <img src="https://assets.pharmeasy.in/apothecary/images/googlePlay.svg?dim=360x0" alt="Google Play">
+            <img src="https://assets.pharmeasy.in/apothecary/images/appStore.svg?dim=360x0" alt="App Store">
+        
+    </div>
+    
+
+
+
+
+    <!-- footerdesgin -->
+<!-- Footer -->
+<section id="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                    <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                </ul>
+            </div>
+            <div class="page_logo"><i class="fa-solid fa-truck-medical"></i>
+                <h2>DotMeds</h2> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
+                <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ./Footer -->
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const prevBtn = document.querySelector('.sliding-btn.prev');
+    const nextBtn = document.querySelector('.sliding-btn.next');
+    const slidingImages = document.querySelector('.sliding-images');
+    const images = document.querySelectorAll('.sliding-images img');
+    const totalImages = images.length;
+    let index = 0;
+    const intervalTime = 3000; 
+    let slideInterval;
+
+    function updatesliding() {
+        const offset = -index * 100;
+        slidingImages.style.transform = `translateX(${offset}%)`;
+    }
+
+    function startAutoSlide() {
+        slideInterval = setInterval(() => {
+            index = (index < totalImages - 1) ? index + 1 : 0;
+            updatesliding();
+        }, intervalTime);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoSlide(); 
+        index = (index > 0) ? index - 1 : totalImages - 1;
+        updatesliding();
+        startAutoSlide(); 
+    });
+
+    nextBtn.addEventListener('click', () => {
+        stopAutoSlide(); 
+        index = (index < totalImages - 1) ? index + 1 : 0;
+        updatesliding();
+        startAutoSlide(); 
+    });
+
+    startAutoSlide(); 
+});
+
+// JavaScript for sliding functionality
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.sliding2-images');
+    const images = document.querySelectorAll('.sliding2-images img');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    let currentIndex = 0;
+    const totalImages = images.length;
+    let autoSlideInterval;
+
+    const showSlide = (index) => {
+        slides.style.transform = `translateX(${-index * 33.33}%)`;
+    };
+
+    const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showSlide(currentIndex);
+    };
+
+    const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showSlide(currentIndex);
+    };
+
+    const startAutoSlide = () => {
+        autoSlideInterval = setInterval(nextSlide, 2000); 
+    };
+
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+    };
+
+    nextBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+    });
+
+    startAutoSlide();
+});
+
+</script>
+</body>
+
+</html>
