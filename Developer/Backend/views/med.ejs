@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>apki medical</title>
+    <title>Your Own Medical</title>
     <link rel="stylesheet" href="med.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <Style>
@@ -584,8 +584,8 @@ background-color: pink;
         <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
             <a href="Cart">Cart</a>
         </div>
-        <div class="sign_in"><i class="fa-solid fa-user-plus"></i>
-            <a href="Sign in/Sign up">Sign in/Sign up</a>
+        <div  id="LoginButton" class="sign_in"><i class="fa-solid fa-user-plus"></i>
+            <a href="localhost:3000/login">Sign in/Sign up</a>
         </div>
     </header>
     <p>
@@ -898,7 +898,10 @@ document.addEventListener('DOMContentLoaded', () => {
         prevSlide();
         startAutoSlide();
     });
-
+     
+    document.getElementById('LoginButton').addEventListener('click', function() {
+            window.location.href = '/login';
+        });
     startAutoSlide();
 });
 

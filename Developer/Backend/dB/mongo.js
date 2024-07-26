@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 const uri = 'mongodb://localhost:27017';
 
 // Database Name
-const dbName = 'garbageDatabase';
+const dbName = 'Database';
 
 // Create a new MongoClient
 const client = new MongoClient(uri);
