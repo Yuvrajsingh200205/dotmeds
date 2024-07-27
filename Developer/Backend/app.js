@@ -58,7 +58,7 @@ app.post('/signup', async (req, res) => {
       }
 
       db.query('INSERT INTO users (fullName, email, password) VALUES (?, ?, ?)', [fullName, email, hashedPassword], (err) => {
-        if (err) {
+        if (err) {        
           console.error('Error inserting user:', err);
           return res.status(500).send('Server error');
         }
