@@ -14,11 +14,18 @@
   "author": "Aditya Pandey",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+=======
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+>>>>>>> 615df41a48537217d96824172023ab0018c6635b
     "mysql2": "^3.10.3",
     "nodemon": "^3.1.4"
   }
