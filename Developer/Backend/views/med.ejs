@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>apki medical</title>
+    <title>Your Own Medical</title>
     <link rel="stylesheet" href="med.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <Style>
@@ -18,6 +18,7 @@ body {
 
 /* Header styles */
 
+
 header.page-header {
     position: fixed;
     top: 0;
@@ -28,6 +29,7 @@ header.page-header {
     z-index: 1000; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
+    width: 97vw;
 }
 .page-header {
     display: flex;
@@ -35,6 +37,7 @@ header.page-header {
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #09bd93;
+    
    
 }
 
@@ -49,7 +52,7 @@ header.page-header {
 }
 .page_logo i {
     padding: 5px;
- font-size: 40px;
+ font-size: 30px;
 
 }
 
@@ -61,25 +64,28 @@ header.page-header {
 
 .page_search input[type="text"] {
     padding: 5px;
-    font-size: 16px;
+    font-size: 13px;
     border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    border-radius: 8px 0 0 8px;
     outline: none;
+    width: 500px;
+    height: 30px;
 }
 
 .page_search button {
     padding: 5px 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-left: none;
-    border-radius: 0 4px 4px 0;
-    background-color: #007bff;
+    border-radius: 0 8px 8px 0;
+    background-color: #7cfffe;
     /* color: white; */
+    height: 42px;
     cursor: pointer;
 }
 
 .page_search button:hover {
-    background-color: #0056b3;
+    background-color: #00ffbf;
 }
 
 /* Header navigation links styles */
@@ -90,14 +96,24 @@ header.page-header {
 
 .page-header div a {
     text-decoration: none;
-    color: #090a0a;
+    color: #ffffff;
     margin-left: 5px;
     font-size: 16px;
 }
 
 .page-header div i {
     margin-right: 5px;
-    color: #090a0a;
+    color: #ffffff;
+}
+ 
+#LoginButton{
+    cursor: pointer;
+    margin-right: 20px ;
+    color: white;
+}
+a{
+    color: black;
+    text-decoration: none;
 }
 
 /* Specific sections styles */
@@ -569,10 +585,10 @@ background-color: pink;
 <body>
     <header class="page-header">
         <div class="page_logo"><i class="fa-solid fa-truck-medical"></i>
-        <h2>DotMeds</h2>
+        <h2 style="color: white;">DotMeds</h2>
         </div>
         <div class="page_search"> <form action="/search" method="get">
-            <input type="text" name="query" placeholder="Search for medical">
+            <input type="text" name="query" placeholder="  Search for medicine & wellness products...">
             <button type="submit">Search</button>
         </form></div> 
         <div class="Upload"><i class="fa-solid fa-file-arrow-up"></i>
@@ -583,14 +599,13 @@ background-color: pink;
         </div>
         <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
             <a href="Cart">Cart</a>
-        </div>
-        <div class="sign_in"><i class="fa-solid fa-user-plus"></i>
-            <a href="Sign in/Sign up">Sign in/Sign up</a>
-        </div>
+        </div class = "GetSigned">
+        <a href="http://localhost:3000/signup"><div id="LoginButton" class="sign_in"><i class="fa-solid fa-user-plus"></i>
+            Sign in/Sign up
+        </div></a>
+        
     </header>
-    <p>
-  <a href="Covid Essentials">Covid Essentials</a> <a href=" Diabetes "> Diabetes</a> <a href="Cardiac Care">Cardiac Care</a>  <a href="stomach Care">Stomach Care</a> <a href=" Ayurvedic"> Ayurvedic</a>  <a href="Homeopathy">Homeopathy</a>  <a href="Fitness">Fitness</a> <a href="Mom & Baby Devices">Mom & Baby Devices</a> <a href="Surgicals ">Surgicals </a> <a href="Sexual">Sexual</a>  <a href="Wellness">Wellness</a> <a href="Treatments Skin Care Personal Care">Treatments Skin Care Personal Care</a>
-  </p>
+  
 
 <div class="sliding">
     <button class="sliding-btn prev">&#10094;</button>
@@ -681,7 +696,7 @@ background-color: pink;
         <h2>Accu-Chek Instant</h2>
         <h2>Rs 1223.21</h2>
         <h3>GET 21% off</h3>
-        <button>ADD TO CART</button>
+       <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 
 <div class="product2">
@@ -689,7 +704,7 @@ background-color: pink;
         <h2>Virginia Care Spento Hime.....</h2>
         <h2>Rs 2983.21</h2>
         <h3>GET 25% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 
 <div class="product3">
@@ -697,7 +712,7 @@ background-color: pink;
         <h2>Omnigel.....</h2>
         <h2>Rs 183.21</h2>
         <h3>GET 45% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 
 <div class="product4">
@@ -705,35 +720,35 @@ background-color: pink;
         <h2>D protin Chocolate.....</h2>
         <h2>Rs 590.51</h2>
         <h3>GET 45% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 <div class="product5">
     <img src="https://www.netmeds.com/images/product-v1/150x150/813592/dr_morepen_gluco_one_blood_glucose_test_strips_bg03_50_s_58318_0_4.jpg" alt="">
         <h2>Dr.Morepen GlucoOne.....</h2>
         <h2>Rs 590.51</h2>
         <h3>GET 45% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 <div class="product6">
     <img src="https://www.netmeds.com/images/product-v1/600x600/822661/durex_condoms_extra_time_10s_0_4.jpg" alt="">
         <h2>Durex Condoms.....</h2>
         <h2>Rs 270.51</h2>
         <h3>GET 3% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 <div class="product7">
     <img src="https://www.netmeds.com/images/product-v1/150x150/388215/volini_spray_100gm_46243_0_2.jpg" alt="">
         <h2>Volini Spray 100gm</h2>
         <h2>Rs 400.51</h2>
         <h3>GET 15% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 <div class="product8">
     <img src="https://www.netmeds.com/images/product-v1/600x600/850948/kamasutra_condoms_dotted_20_s_0.jpg" alt="">
         <h2> Kamasutra Condoms - Dotted 20's </h2>
         <h2>Rs 150.51</h2>
         <h3>GET 2% off</h3>
-        <button>ADD TO CART</button>
+        <a href="<!-- yaha pe fill attach kar deyo * --> "><button>ADD TO CART</button></a> 
 </div>
 </div>
 
@@ -898,7 +913,10 @@ document.addEventListener('DOMContentLoaded', () => {
         prevSlide();
         startAutoSlide();
     });
-
+     
+    document.getElementById('LoginButton').addEventListener('click', function() {
+            window.location.href = '/login';
+        });
     startAutoSlide();
 });
 
