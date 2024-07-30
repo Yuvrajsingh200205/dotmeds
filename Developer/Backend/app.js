@@ -1,32 +1,4 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const authRouter = require('./routes/auth');
-const mysql = require('mysql2');
-// const bcrypt = require('bcrypt'); 
-const bcrypt = require('bcryptjs');
 
-// const signupRoutes = require('./routes/signup');
-
-const app = express();
-app.set('view engine', 'ejs');
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.use(express.static('public'));
-
-app.get('/', (req, res) => {
-  res.render('med');
-});
-
-app.get('/signup', (req, res) => {
-  res.render('signup');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
 
 // const db = mysql.createConnection({
 //   host: 'localhost',
@@ -98,6 +70,71 @@ app.get('/login', (req, res) => {
 //   });
 // });
 
+
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const authRouter = require('./routes/auth');
+const mysql = require('mysql2');
+const bcrypt = require('bcryptjs'); // Use bcryptjs
+
+const app = express();
+app.set('view engine', 'ejs');
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+// Routes
+app.get('/', (req, res) => {
+  res.render('med');
+});
+
+app.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+app.get('/Offers', (req, res) => {
+  res.render('offers');
+});
+
+
+app.get('/accu-check', (req, res) => {
+  res.render('accubox');
+});
+
+app.get('/Virginiaa', (req, res) => {
+  res.render('virginia');
+});
+
+app.get('/Omnigel', (req, res) => {
+  res.render('omni');
+});
+
+app.get('/Chocolate', (req, res) => {
+  res.render('chocolate');
+});
+
+app.get('/Drmorepen', (req, res) => {
+  res.render('Drmorepen');
+});
+
+app.get('/Durex', (req, res) => {
+  res.render('durex');
+});
+
+app.get('/Volini', (req, res) => {
+  res.render('volini');
+});
+
+app.get('/Kamasutra', (req, res) => {
+  res.render('kamasutra');
+});
 
 app.use('/auth', authRouter);
 

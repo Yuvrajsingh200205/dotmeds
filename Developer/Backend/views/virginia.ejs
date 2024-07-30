@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart </title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #d2d0d0;
+    overflow-x: hidden; 
+}
+
+/* Header styles */
+
+
+header.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #09bd93; 
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    width: 97vw;
+}
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #09bd93;
+    
+   
+}
+
+/* Logo styles */
+.page_logo  {
+    height: 40px;
+    width: auto;
+     color: #0e1a1c;
+    padding: 5px;
+    border-radius: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.page_logo i {
+    padding: 5px;
+ font-size: 30px;
+
+}
+
+/* Search bar styles */
+.page_search form {
+    display: flex;
+    align-items: center;
+}
+
+.page_search input[type="text"] {
+    padding: 5px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    width: 500px;
+    height: 30px;
+}
+
+.page_search button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    background-color: #7cfffe;
+    /* color: white; */
+    height: 42px;
+    cursor: pointer;
+}
+
+.page_search button:hover {
+    background-color: #00ffbf;
+}
+
+/* Header navigation links styles */
+.page-header div {
+    display: flex;
+    align-items: center;
+}
+
+.page-header div a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.page-header div i {
+    margin-right: 5px;
+    color: #ffffff;
+}
+ 
+#LoginButton{
+    cursor: pointer;
+    margin-right: 20px ;
+    color: white;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+/* Specific sections styles */
+.Upload, .offer, .cart, .sign_in {
+    margin-left: 20px;
+}
+
+.Upload a, .offer a, .cart a, .sign_in a {
+    display: flex;
+    align-items: center;
+}
+
+.cartpart {
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 520px;
+    overflow-y: auto;
+    position: relative;
+    top: 110px;
+}
+
+.cartpart img {
+    max-width: 500px;
+    margin-right: 80px;
+    border-radius: 40px;
+}
+
+.cartpart .content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 70px;
+}
+
+.cartpart h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cartpart button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 5px 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cartpart button:hover {
+    background-color: #566d86;
+}
+
+.cartpart p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.cartpart h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.cartpart h4 {
+    display: inline;
+    text-decoration: line-through;
+    color: #888;
+    font-weight: normal;
+}
+
+.cartpart li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="page_logo"><i class="fa-solid fa-truck-medical"></i>
+        <h2 style="color: white;">DotMeds</h2>
+        </div>
+        <div class="page_search">
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="  Search for medicine & wellness products...">
+                <button type="submit">Search</button>
+            </form>
+        </div> 
+        <div class="Upload"><i class="fa-solid fa-file-arrow-up"></i>
+        <a href="Upload">Upload</a>
+        </div>
+        <div class="offer"><i class="fa-solid fa-tag"></i>
+            <a href="Offers">Offers</a>
+        </div>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
+            <a href="Cart">Cart</a>
+        </div>
+        <a href="http://localhost:3000/signup"><div id="LoginButton" class="sign_in"><i class="fa-solid fa-user-plus"></i>
+            Sign in/Sign up
+        </div></a>
+    </header>
+    <div class="cartpart">
+        <img src="https://www.netmeds.com/images/product-v1/600x600/804268/virginia_care_spento_himen_restore_virginity_pack_of_2_0_2.jpg" alt="cart_image">
+        <div class="content">
+            <h1>
+                Virginia Care Spento Himen - Restore Virginity (Pack of 2)
+                </h1>
+            <button class="small-button">device</button>
+            <button class="small-button">management</button>
+            <p>5.0 ⭐️⭐️⭐️⭐️⭐️ (1 Ratings & 1 Reviews)</p>
+            <br>
+            <h3>Rs 2700 <h4> MRP ₹3600.00</h4></h3>
+            <ul>
+                <li>This product cannot be returned for a refund or exchange</li>
+                <li>Mkt: Roche Diabetes Care India Pvt LTD</li>
+                <li>Country of Origin: United States</li>
+                <li>Delivery charges if applicable will be applied at checkout </li>
+            </ul>
+            <button class="add-to-cart-button">ADD TO CART</button>
+        </div>
+    </div>
+</body>
+</html>
